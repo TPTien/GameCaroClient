@@ -36,7 +36,7 @@ public class LoginDialog extends JDialog {
         cs.fill = GridBagConstraints.HORIZONTAL;
  
         lbUsername = new JLabel("Username: ");
-        lbUsername.setFont(new Font("Serif",Font.BOLD,16));
+        lbUsername.setFont(new Font("Serif",Font.PLAIN,16));
         cs.gridx = 0;
         cs.gridy = 0;
         cs.gridwidth = 1;
@@ -50,7 +50,7 @@ public class LoginDialog extends JDialog {
         panel.add(tfUsername, cs);
  
         lbPassword = new JLabel("Password: ");
-        lbPassword.setFont(new Font("Serif",Font.BOLD,16));
+        lbPassword.setFont(new Font("Serif",Font.PLAIN,16));
         cs.gridx = 0;
         cs.gridy = 1;
         cs.gridwidth = 1;

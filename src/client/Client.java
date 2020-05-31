@@ -459,6 +459,7 @@ public class Client implements Runnable{
                          matrandanh[i][j] = 0;
                  }
          }
+         //setEnableButton(true);
          rd_o.setEnabled(true);
          rd_x.setEnabled(true);
          //setEnableButton(true);
@@ -479,8 +480,8 @@ public class Client implements Runnable{
     JOptionPane.YES_NO_OPTION);
         if (m == JOptionPane.YES_OPTION) {
                 setVisiblePanel(p);
-                newgame();
-                setEnableButton(true);
+                //newgame();
+                //setEnableButton(false);
                 try {
                         oos.writeObject("newgame,123,123,"+opponentName);
                 } catch (IOException ie) {
@@ -494,6 +495,7 @@ public class Client implements Runnable{
                 labelOpponent.setText("Đối thủ");
                 labelOpponent.setBorder(null);
                 labelYou.setBorder(null);
+                content.setText("");
                 newgame();
 
             } catch (IOException ex) {
@@ -793,12 +795,14 @@ public class Client implements Runnable{
                                     break;
                                 case "newgame":
                                     demthoigian.setText("00:30");
+                                    
                                     newgame();
+                                    
                                     break;
                                 case "youlose":
                                     thoigian.stop();
                                     showMessageDialog("thua");
-                                    setEnableButton(false);
+                                    setEnableButton(true);
                                     break;
                                 case "youwin":
                                     thoigian.stop();
@@ -815,6 +819,7 @@ public class Client implements Runnable{
                                     labelOpponent.setText("Đối thủ");
                                     labelOpponent.setBorder(null);
                                     labelYou.setBorder(null);
+                                    content.setText("");
                                     newgame();
                                     break;
                                 
